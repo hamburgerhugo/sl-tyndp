@@ -1,0 +1,68 @@
+# Convention
+
+UI:
+    # centered in 0,0, x range +/- 600, y +/- 300
+    country_coordinates: {
+    "FR": { "x": -205.74, "y": -123.75 },
+    "DE": { "x": 93.99, "y": 104.34 },
+    "BE": { "x": -141.59, "y": 57.06 },
+    "ES": { "x": -414.94, "y": -288.75 },
+    "CH": { "x": 35.61, "y": -108.57 },
+    "IT": { "x": 141.87, "y": -226.79 },
+    "PT": { "x": -600.00, "y": -299.88 },
+    "UK": { "x": -401.78, "y": 240.27 },
+    "IE": { "x": -560.03, "y": 196.38 },
+    "AT": { "x": 188.75, "y": -73.69 },
+    "NL": { "x": -117.92, "y": 140.61 },
+    "DK": { "x": 83.05, "y": 255.43 },
+    "NO": { "x": 36.31, "y": 600.00 },
+    "SE": { "x": 357.77, "y": 571.49 },
+    "PL": { "x": 383.27, "y": 129.47 },
+    "CZ": { "x": 245.89, "y": 19.53 },
+    "_SOURCE": { "x": 650, "y": 100 },
+    "_SINK": { "x": 650, "y": 75 },
+
+}
+    offset: {
+        'electricity':0,
+        'hydrogen':-25,
+    }
+    color: { # R G B
+        'electricity': { 0: 230, 1: 108, 2: 44 },
+        'hydrogen': { 0: 0, 1: 255, 2: 232 },
+        'virtual': { 0: 200, 1: 200, 2: 200 },
+    }
+
+label: {
+    'electricity': 'el',
+    'hydrogen': 'h2',
+    'virtual': '00',
+}
+
+virtual_areas: ['_SOURCE', '_SINK']
+
+link:
+    type: {
+        'electricity': 'ac', # 'ac', 'dc'
+        'hydrogen': 'gaz',
+        'virtual': 'virt',
+}
+    tech: {
+        'electricity': 'power_line', # 'ac', 'dc'
+        'hydrogen': 'h2_pipeline',
+    }
+    link_style: {
+        'electricity': 'plain', # plain, dot, dash, dotdash
+        'hydrogen': 'plain',
+        'virtual': 'dash',
+}
+    color: { # R G B
+        'electricity': { 0: 230, 1: 108, 2: 44 },
+        'hydrogen': { 0: 0, 1: 255, 2: 232 },
+        'virtual': { 0: 255, 1: 255, 2: 255 },
+    }
+    link_width: { # float
+        'electricity': 1,
+        'hydrogen': 1,
+        'virtual': 0.5,
+    }

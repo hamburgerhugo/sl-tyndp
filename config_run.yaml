@@ -1,0 +1,115 @@
+study_parameters:
+  study_name_prefix: HH-SL-0.1.1
+  antares_version: '9.2'
+  years_to_run:
+  - 2030
+  - 2040
+  - 2050
+  areas:
+  - FR
+  - DE
+  - BE
+  - ES
+  - CH
+  - IT
+  - PT
+  - UK
+  - IE
+  - AT
+  - NL
+  - DK
+  - 'NO'
+  - SE
+  - PL
+  - CZ
+  weather_years:
+    start: 1982
+    end: 2015
+file_paths:
+  shared:
+    pommes_output: data/Common/solution.nc
+    raw_hydro_data: data/common/availability/hydro_dataset.nc
+    pecd: data/common/availability/pecd_2040.nc
+  by_year:
+    load_el: data/common/demand/NT/Electricity/NT_Electricity_{year}.nc
+    load_h2: data/common/demand/NT/H2/NT_H2_{year}{profile}.nc
+pommes_settings:
+  scenario: GA
+  weather_year: 2009
+  config_path: config_pommes.yaml
+  base_data_path: data/Global Ambition
+model_settings:
+  hydro_policy: workaround
+  hurdle_cost: 0.01
+  uniform_h2_profile: true
+technology_mappings:
+  p2g:
+  - electrolysis_2030
+  - electrolysis_2035
+  - electrolysis_2040
+  - electrolysis_2050
+  g2p:
+  - ccgt_h2
+  - ocgt_h2
+  vre:
+  - wind_onshore
+  - wind_offshore
+  - solar_pv
+  - solar_rooftop_pv
+  thermal_el:
+  - biomass
+  - ccgt
+  - coal
+  - lignite
+  - new_nuke
+  - ocgt
+  - old_nuke
+  thermal_h2:
+  - smr
+  - smr_ccs
+  - smr_partial_ccs
+  - atr
+  - atr_ccs
+  st_storage_el:
+  - battery
+  - battery_residential
+  - PHS
+  st_storage_h2:
+  - h2_tank
+  pommes_to_antares_group:
+    solar_pv: solar pv
+    solar_rooftop_pv: solar rooftop
+    wind_offshore: wind offshore
+    wind_onshore: wind onshore
+    biomass: other
+    ccgt: gas
+    coal: hard coal
+    lignite: lignite
+    new_nuke: nuclear
+    ocgt: gas
+    old_nuke: nuclear
+    smr: other 3
+    smr_ccs: other 3
+    smr_partial_ccs: other 3
+    atr: other 3
+    atr_ccs: other 3
+    electrolysis_2030: other 1
+    electrolysis_2035: other 1
+    electrolysis_2040: other 1
+    electrolysis_2050: other 1
+    ccgt_h2: other 2
+    ocgt_h2: other 2
+    battery: battery
+    battery_residential: battery
+    PHS: psp_closed
+    h2_tank: other 1
+    dam: other res 4
+  pommes_to_pecd:
+    solar_pv: LFSolarPV
+    solar_rooftop_pv: LFSolarPVRooftop
+    wind_offshore: Wind_Offshore
+    wind_onshore: Wind_Onshore
+study_ids_by_year:
+  2030: b4fd0c1e-894d-4601-b4f0-9abd6dac0ca5
+  2040: 26f8ba91-8764-4dfc-876a-0ce7164e6f1c
+  2050: 81d1884a-2ef7-4d4e-934c-8a26e29db617

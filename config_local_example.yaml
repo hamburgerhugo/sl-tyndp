@@ -1,0 +1,21 @@
+antares_api_host:
+  type: str
+  values: https://antares-web-recette.rte-france.com
+antares_study:
+  id: e4674d55-3344-4d66-ba9a-581891aa0475
+  name: HH-SL-0.1.1
+antares_token:
+  type: str
+  values: token_abtares_web
+proxy_host:
+  type: str
+  values: host
+proxy_id:
+  type: str
+  values: ID
+proxy_port:
+  type: str
+  values: '3128'
+proxy_pwd:
+  type: str
+  values: PWD
